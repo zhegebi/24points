@@ -15,6 +15,7 @@ func calculateNumbers(n1 float64, n2 float64, op string) float64 {
 	case "/":
 		return n1 / n2
 	default:
+		fmt.Println("Invalid operator!")
 		return n1 + n2
 	}
 }
