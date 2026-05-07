@@ -2,6 +2,8 @@ package twentyfourPoints
 
 import "fmt"
 
+var OPERATOR = []string{"+", "-", "*", "/"}
+
 func calculateNumbers(n1 float64, n2 float64, op string) float64 {
 	switch op {
 	case "+":
@@ -36,9 +38,9 @@ func Calculate24(n1, n2, n3, n4 int) bool {
 					if l == i || l == j || l == k {
 						continue
 					}
-					for _, op1 := range []string{"+", "-", "*", "/"} {
-						for _, op2 := range []string{"+", "-", "*", "/"} {
-							for _, op3 := range []string{"+", "-", "*", "/"} {
+					for _, op1 := range OPERATOR {
+						for _, op2 := range OPERATOR {
+							for _, op3 := range OPERATOR {
 
 								if equals(24, calculateNumbers(calculateNumbers(float64(n[i]), float64(n[j]), op1), calculateNumbers(float64(n[k]), float64(n[l]), op2), op3)) {
 									fmt.Println("(", n[i], op1, n[j], ")", op3, "(", n[k], op2, n[l], ")", "=", 24)
